@@ -27,7 +27,7 @@ end
 
 pid = ARGV[0]
 
-Node.where(label: "Report content").each do |n|
+Node.where(project: pid, label: "Report content").each do |n|
 	prop_list = n.properties
 	puts "#{prop_list}"
 	prop_list.each_pair do |key, value|
